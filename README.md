@@ -1,2 +1,2 @@
 # Hadoop-MOOC
-MOOC-Hadoop
+Hadoop-MOOC

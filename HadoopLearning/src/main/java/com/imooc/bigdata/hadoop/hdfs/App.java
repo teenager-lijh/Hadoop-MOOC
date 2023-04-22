@@ -18,7 +18,7 @@ import java.net.URI;
  */
 public class App 
 {
-    public static final String HDFS_PATH = "hdfs://hadoop000:8020";
+    public static final String HDFS_PATH = "hdfs://192.168.1.184:8020";
     Configuration configuration = null;
     FileSystem fileSystem = null;
 
@@ -34,7 +34,7 @@ public class App
         System.out.println("-------setUp------");
         configuration = new Configuration();
         configuration.set("dfs.replication", "1");
-        fileSystem = FileSystem.get(new URI(HDFS_PATH), configuration, "hadoop");
+        fileSystem = FileSystem.get(new URI(HDFS_PATH), configuration, "blueberry");
     }
 
     @Test

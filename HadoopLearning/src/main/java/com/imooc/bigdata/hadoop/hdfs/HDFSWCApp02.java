@@ -61,6 +61,7 @@ public class HDFSWCApp02 {
 //      4) 将结果输出到 HDFS ==> HDFS API
         Path output = new Path(properties.getProperty(Constants.OUTPUT_PATH));
         FSDataOutputStream out = fs.create(output);
+        
 
         // TODO... 将第三步缓存中的内容输出到 out 中去
         Set<Map.Entry<Object, Object>> entries = contextMap.entrySet();

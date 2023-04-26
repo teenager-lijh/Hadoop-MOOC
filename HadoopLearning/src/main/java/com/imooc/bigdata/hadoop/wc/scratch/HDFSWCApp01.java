@@ -1,4 +1,4 @@
-package com.imooc.bigdata.hadoop.hdfs;
+package com.imooc.bigdata.hadoop.wc.scratch;
 
 
 import org.apache.hadoop.conf.Configuration;
@@ -7,8 +7,6 @@ import org.apache.hadoop.fs.*;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URI;
-import java.nio.Buffer;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
@@ -22,10 +20,10 @@ public class HDFSWCApp01 {
 
     public static void main(String[] args) throws Exception{
 //        1) 读取 HDFS 上的文件 ==> HDFS API
-        Path input = new Path("/hdfsapi/test/hellokk.txt");
+        Path input = new Path("/user/blueberry/words.txt");
 
 //        获取要操作的 HDFS 文件系统
-        FileSystem fs = FileSystem.get(new URI("hdfs://hadoop000:8020"), new Configuration(), "hadoop");
+        FileSystem fs = FileSystem.get(new URI( "hdfs://hadoop000:8020"), new Configuration(), "blueberry");
         RemoteIterator<LocatedFileStatus> iterator= fs.listFiles(input, false);
 
         WordCountMapper mapper = new WordCountMapper();

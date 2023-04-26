@@ -1,4 +1,4 @@
-package com.imooc.bigdata.hadoop.hdfs;
+package com.imooc.bigdata.hadoop.wc.scratch;
 
 public interface ImoocMapper {
     /**

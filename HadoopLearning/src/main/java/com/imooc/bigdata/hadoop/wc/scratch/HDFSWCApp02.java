@@ -1,15 +1,14 @@
-package com.imooc.bigdata.hadoop.hdfs;
+package com.imooc.bigdata.hadoop.wc.scratch;
 
 
+import com.imooc.bigdata.hadoop.hdfs.Constants;
+import com.imooc.bigdata.hadoop.hdfs.ParamsUtils;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.*;
-import org.apache.hadoop.yarn.webapp.Params;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URI;
-import java.nio.Buffer;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
@@ -44,7 +43,7 @@ public class HDFSWCApp02 {
 
             String line = "";
             while((line = reader.readLine()) != null) {
-//              2) 业务处理
+//              2) 业务处理：相当于框架 Map 的过程
                 // TODO... 在业务逻辑完成后将结果写到Cache中去
                 mapper.map(line, context);
             }
@@ -58,7 +57,7 @@ public class HDFSWCApp02 {
         Map<Object, Object> contextMap = context.getCacheMap();
 
 
-//      4) 将结果输出到 HDFS ==> HDFS API
+//      4) 将结果输出到 HDFS ==> HDFS API 相当于 Reduce 的过程
         Path output = new Path(properties.getProperty(Constants.OUTPUT_PATH));
         FSDataOutputStream out = fs.create(output);
         

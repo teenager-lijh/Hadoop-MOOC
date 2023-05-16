@@ -29,10 +29,14 @@
         <value>1</value>
     </property>
     
+    <!-- 这段应该配置在 core-site.xml 中， 
+		 不然在运行 $HADOOP_HOME/share/hadoop/mapreduce/pi example 
+		 的时候会出现 File Do Not Found 的 error
     <property>
         <name>hadoop.tmp.dir</name>
         <value>一个具体的路径</value>
     </property>
+    -->
     
     <property>
         <name>dfs.namenode.secondary.http-address</name>

@@ -10,7 +10,7 @@ public class AccessReducer extends Reducer<Text, Access, NullWritable, Access> {
 
     @Override
     protected void reduce(Text key, Iterable<Access> values, Reducer<Text, Access, NullWritable, Access>.Context context) throws IOException, InterruptedException {
-
+        
         /**
          * NullWritable 代表是一个 空
          */

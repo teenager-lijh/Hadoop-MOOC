@@ -1,2 +1,4 @@
 *.DS_Store
 target/
+HadoopLearning/access/input/raw
+HadoopLearning/.idea/

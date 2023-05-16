@@ -15,6 +15,7 @@ import java.net.URISyntaxException;
 
 public class AccessApp {
     public static void main(String[] args) throws IOException, URISyntaxException, InterruptedException, ClassNotFoundException {
+        
         System.setProperty("HADOOP_USER_NAME", "blueberry");
 
         Configuration configuration = new Configuration();
@@ -37,6 +38,11 @@ public class AccessApp {
         // 设置Job对应的参数: Mapper输出key和value的类型
         job.setMapOutputKeyClass(Text.class);
         job.setMapOutputValueClass(Access.class);
+
+        // 设置自定义分区规则
+        job.setPartitionerClass(AccessPartitioner.class);
+        // 设置reduce个数
+        job.setNumReduceTasks(3);
 
         // 设置Job对应的参数: Reduce输出key和value的类型
         job.setOutputKeyClass(Text.class);

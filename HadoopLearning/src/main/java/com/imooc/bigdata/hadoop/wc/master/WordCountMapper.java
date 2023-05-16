@@ -34,7 +34,7 @@ public class WordCountMapper extends Mapper<LongWritable,Text,Text,IntWritable>{
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
 
         // 把value对应的行数据按照指定的分隔符拆开
-        String[] words = value.toString().split("\t");
+        String[] words = value.toString().split(" ");
 
 
         for(String word : words) {
